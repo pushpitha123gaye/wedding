@@ -6,7 +6,6 @@
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
-    
 
 <style>
 * {
@@ -21,6 +20,206 @@ html, body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* ---------- COMMON SECTION ---------- */
+/* COMMON SECTION */
 section {
-    height
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+/* TRADITIONAL BACKGROUND */
+.traditional-bg {
+    background:
+        radial-gradient(circle at top left, rgba(255,215,160,0.4), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(210,160,90,0.35), transparent 60%),
+        repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.04) 2px,
+            transparent 2px,
+            transparent 6px
+        ),
+        linear-gradient(135deg, #f3e0c0, #e1b97d);
+}
+
+/* CARD */
+.card {
+    background: rgba(255, 255, 255, 0.93);
+    padding: 45px;
+    border-radius: 26px;
+    box-shadow: 0 30px 65px rgba(0,0,0,0.18);
+    max-width: 850px;
+}
+
+/* SCREEN 1 */
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    color: #5a3e2b;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.heart {
+    font-size: 54px;
+    cursor: pointer;
+    animation: pulse 1.6s infinite;
+}
+
+.arrow {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #7a5a42;
+    letter-spacing: 1px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* SCREEN 2 */
+.quote {
+    font-style: italic;
+    font-size: 18px;
+    color: #6a4b35;
+    margin-bottom: 30px;
+}
+
+/* NAMES – LINE BY LINE */
+.names {
+    margin-bottom: 25px;
+}
+
+.name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 62px;
+    color: #8b3f2b;
+    line-height: 1.1;
+}
+
+.weds {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: #6a4b35;
+    margin: 10px 0;
+}
+
+.details {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #4b3a2a;
+}
+
+.subhead {
+    margin-top: 25px;
+}
+
+.flower {
+    font-size: 38px;
+    margin-top: 35px;
+    cursor: pointer;
+}
+
+.click-text {
+    font-size: 14px;
+    color: #7a5a42;
+}
+
+/* SCREEN 3 */
+.blessing {
+    font-size: 20px;
+    font-style: italic;
+    color: #5a3e2b;
+    margin-bottom: 30px;
+}
+
+.line {
+    width: 140px;
+    height: 3px;
+    background: linear-gradient(to right, #b68d40, #e6c36a);
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.final-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #6a4b35;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SCREEN 1 -->
+<section id="screen1" class="traditional-bg">
+    <div>
+        <div class="title">Wedding Invitation</div>
+        <div class="heart" onclick="goTo('screen2')">❤️</div>
+        <div class="arrow">Click here</div>
+    </div>
+</section>
+
+<!-- SCREEN 2 -->
+<section id="screen2" class="traditional-bg">
+    <div class="card">
+        <div class="quote">
+            “Together with our families, we joyfully invite you to celebrate love,
+            togetherness, and new beginnings”
+        </div>
+
+        <div class="names">
+            <div class="name">Chaitanya</div>
+            <div class="weds">weds</div>
+            <div class="name">Gayathri</div>
+        </div>
+
+        <div class="details">
+            <strong>Wedding Date:</strong> 25th February 2026<br>
+            <strong>Muhurtham:</strong> 11:09 PM<br>
+            <strong>Venue:</strong> Padmashali Satram, Bhadrachalam
+        </div>
+
+        <div class="details subhead">
+            🎉 <strong>Reception Details</strong><br><br>
+            <strong>Reception:</strong> 27th February 2026<br>
+            <strong>Location:</strong> Recharla<br>
+            <strong>Lunch:</strong> 11:00 AM Onwards
+        </div>
+
+        <div class="flower" onclick="goTo('screen3')">🌸</div>
+        <div class="click-text">Click here</div>
+    </div>
+</section>
+
+<!-- SCREEN 3 -->
+<section id="screen3" class="traditional-bg">
+    <div class="card">
+        <div class="blessing">
+            “Your gracious presence and heartfelt blessings will add joy
+            and meaning to our celebrations”
+        </div>
+
+        <div class="line"></div>
+
+        <div class="final-quote">
+            Please join us and bless the couple
+        </div>
+    </div>
+</section>
+
+<script>
+function goTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
